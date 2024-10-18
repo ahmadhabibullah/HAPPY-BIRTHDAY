@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY BIRTHDAY</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
+                        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
+                        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
+                        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
+                        repeating-conic-gradient(var(--c) 0 25%, #ffffff00 0 50%) 0 0/var(--_s),
+                        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+            background-attachment: fixed;
+        }
+
+        h1 {
+            color: #ded3d3;
+            margin: 50px 0 75px 0;
+            text-align: center;
+        }
+
+        .gift-frame {
+            position: relative;
+            width: 90%; /* Use a percentage for responsiveness */
+            max-width: 550px; /* Maximum width */
+            padding: 20px;
+            background: #554a4a;
+            border: 10px solid #f5c4c4;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .ribbon {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: calc(100% + 40px); /* Full width with margin */
+            height: 20px;
+            background-color: #ff6b81;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .slides, .video {
+            display: none;
+            width: 100%; /* Full width of the gift frame */
+            height: auto; /* Maintain aspect ratio */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .active {
+            display: block;
+        }
+
+        img, video {
+            width: 100%; /* Full width of the frame */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 400px; /* Set max height for consistency */
+            object-fit: cover; /* Cover the container */
+        }
+
+        .button {
+            background-color: #080404;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #2b8a0c;
+        }
+
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 600px) {
+            .gift-frame {
+                padding: 10px; /* Less padding on mobile */
+            }
+
+            h1 {
+                font-size: 1.5em; /* Adjust font size for mobile */
+            }
+
+            .button {
+                padding: 8px; /* Smaller button padding */
+                font-size: 0.9em; /* Smaller button font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>THIS IS A GIFT FOR YOU</h1>
+    <div class="gift-frame">
+        <div class="ribbon"></div>
+        <div class="slideshow-container">
+            <video class="video active" controls src="VIDIO1.mp4"></video>
+            <img class="slides" src="1.jpg" alt="A celebratory image">
+            <img class="slides" src="2.jpg" alt="A celebratory image">
+            <img class="slides" src="3.jpg" alt="A celebratory image">
+            <img class="slides" src="4.jpg" alt="A celebratory image">
+            <img class="slides" src="5.jpg" alt="A celebratory image">
+            <img class="slides" src="6.jpg" alt="A celebratory image">
+            <img class="slides" src="7.jpg" alt="A celebratory image">
+            <img class="slides" src="8.jpg" alt="A celebratory image">
+            <img class="slides" src="9.jpg" alt="A celebratory image">
+            <img class="slides" src="10.jpg" alt="A celebratory image">
+            <img class="slides" src="11.jpg" alt="A celebratory image">
+            <img class="slides" src="12.jpg" alt="A celebratory image">
+            <img class="slides" src="13.jpg" alt="A celebratory image">
+            <img class="slides" src="14.jpg" alt="A celebratory image">
+            <img class="slides" src="15.jpg" alt="A celebratory image">
+            <img class="slides" src="16.jpg" alt="A celebratory image">
+            <img class="slides" src="17.jpg" alt="A celebratory image">
+        </div>
+        <button class="button" onclick="nextSlide()">Next</button>
+        <button class="button" onclick="prevSlide()">Previous</button>
+    </div>
+    
+    <h1>HOPE YOU ARE HAPPY</h1>
+
+    <script>
+        // Birthday alert messages
+        const messages = [
+            "Haayy Delfi", "kamu ulang tahun ya skrng?", "di tunggu traktirannya ya del",
+            "hahahaha bercanda deell", "selamat ulang tahun ya del", "semoga kamu panjang umur",
+            "sehat selalu", "semakin bertambah usia mu, semakin sukses dan bahagia selalu yaa",
+            "semoga semua keinginan kamu juga bisa tercapai", "kamu harus selalu jaga kesehatan ya del",
+            "makannya jangan telat telat yaa del kamu harus ingat itu karna kamu punya asam lambung",
+            "ibadahnya juga jangan sampe di tinggalin ya del",
+            "semoga dihari ini diumur kamu yang baru bisa menjadi awal yang baik untuk kedepannya yaa del","aku ngak tau mau ngomong apa lagi selain happy birthday",
+            "tetap semangat jalanin hari hari mu ya del","ingat tujuan kamu apa ya del,walaupun berat kamu masih punya allah buat kamu ngeluh ya",
+            "jadi jangan merasa sendiri ya del, dan ingat people come on go itu hal wajar",
+            "capek ya del mencet mencetnya?", "maap ya del, aku cuma bisa ngasih ini doang semoga kamu baca sampe akhir ya del",
+            "sekali lagi happy birthday DELFI FITRI", "semoga kamu suka dengan hadiah aku ini",
+            "sampai jumpa di lain waktu del",
+            "terimakasih ya del udh mau baca ini","dan maaf sebesar - besarny ya del ",
+        ];
+
+        messages.forEach(message => alert(message));
+
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slides");
+            const video = document.getElementsByClassName("video")[0];
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            video.classList.remove("active");
+            
+            slideIndex = (slideIndex + 1) % (slides.length + 1);
+            if (slideIndex === 0) {
+                video.classList.add("active");
+            } else {
+                slides[slideIndex - 1].classList.add("active");
+            }
+        }
+
+        function nextSlide() {
+            showSlides();
+        }
+
+        function prevSlide() {
+            const slides = document.getElementsByClassName("slides");
+            const video = document.getElementsByClassName("video")[0];
+            slides[slideIndex].classList.remove("active");
+            video.classList.remove("active");
+
+            slideIndex = (slideIndex - 1 + (slides.length + 1)) % (slides.length + 1);
+            if (slideIndex === 0) {
+                video.classList.add("active");
+            } else {
+                slides[slideIndex - 1].classList.add("active");
+            }
+        }
+
+        // Auto-change slides every 10 seconds
+        setInterval(showSlides, 1000000);
+    </script>
+</body>
+</html>
